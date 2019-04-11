@@ -1,40 +1,10 @@
 import { Component } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 
 import { environment } from '../environments/environment'
-
-const query = gql`
-  query($owner: String!, $name: String!) {
-    repository(owner: $owner, name: $name) {
-      issues(first: 100) {
-        edges {
-          node {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
-
-type Edge = {
-  node: any
-}
-
-type Issue = {
-  edges: Edge[]
-}
-
-type Repository = {
-  issues: Issue
-}
-
-type Response = {
-  repository: Repository,
-};
+import query, { Response } from '../queries/issueList';
 
 const template = `
   <ol id="issue-list">
