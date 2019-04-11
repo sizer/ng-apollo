@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 const template = `
   <issue-list></issue-list>
+  <issue-form></issue-form>
 `;
 
 @Component({
