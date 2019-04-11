@@ -3,8 +3,8 @@ import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 
-import { environment } from '../environments/environment'
-import query, { Response } from '../queries/issueList';
+import { environment } from '../../environments/environment'
+import query, { Response } from '../../queries/issueList';
 
 const template = `
   <ol id="issue-list">
